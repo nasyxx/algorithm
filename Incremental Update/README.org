@@ -9,7 +9,7 @@
 Compare the files in the two folders, the B folder than the A folder more files, put these files into a separate folder C. If files already in C folder, pass it.
 
 ** Why this
-A friend of mine want to do this.
+A friend of mine wants to do this.
 
 ** Algorithm
 I think there is no algorithm here, only the nature and operation of the collection.
