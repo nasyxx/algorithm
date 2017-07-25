@@ -1,5 +1,5 @@
 #+TITLE: README
-#+DATE: Jul, 26, 2017
+#+DATE: Jul 26, 2017
 #+AUTHOR: Nasy
 #+EMAIL: sy_n@me.com
 
