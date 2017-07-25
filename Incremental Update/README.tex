@@ -1,4 +1,4 @@
-% Created 2017-07-26 Wed 03:06
+% Created 2017-07-26 Wed 04:24
 \documentclass[11pt]{article}
 \usepackage{verbatim}
 \usepackage{luatexja-fontspec}
@@ -19,7 +19,7 @@
 \setsansjfont{Pingfang SC}
 \author{Nasy}
 \date{Jul 26, 2017}
-\title{Incremental Update}
+\title{\textbf{Incremental Update}}
 \hypersetup{
   pdfkeywords={},
   pdfsubject={},
@@ -62,7 +62,8 @@ def incremental_update(a_folder_path: str,
         None
     """
     # Compare files between 3 folders.
-    c_files = (set(os.listdir(a_folder_path)) - set(os.listdir(b_folder_path))
+    c_files = (set(os.listdir(a_folder_path))
+               - set(os.listdir(b_folder_path))
                - set(os.listdir(c_folder_path)))
 
     if not os.path.isdir(c_folder_path):

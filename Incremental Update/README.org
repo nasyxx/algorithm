@@ -1,8 +1,9 @@
-#+TITLE: Incremental Update
+#+TITLE: *Incremental Update*
 #+DATE: Jul 26, 2017
 #+AUTHOR: Nasy
 #+EMAIL: sy_n@me.com
 
+#+LaTex_CLASS: article
 #+OPTIONS: num:nil
 
 * Aim
@@ -35,7 +36,8 @@ def incremental_update(a_folder_path: str,
         None
     """
     # Compare files between 3 folders.
-    c_files = (set(os.listdir(a_folder_path)) - set(os.listdir(b_folder_path))
+    c_files = (set(os.listdir(a_folder_path))
+               - set(os.listdir(b_folder_path))
                - set(os.listdir(c_folder_path)))
 
     if not os.path.isdir(c_folder_path):
