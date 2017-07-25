@@ -20,7 +20,7 @@ Aim:
     folder, pass it.
 
 Why this:
-    A friend of mine want to do this.
+    A friend of mine wants to do this.
 
 Copyright © 2017 by Nasy. All Rights Reserved.
 """
@@ -34,11 +34,11 @@ def incremental_update(a_folder_path: str,
     """Incremental update.
 
     Args:
-        a_folder_path: str. A folder path.
-        b_folder_path: str. B folder path.
-        c_folder_path: str. C folder path.
+        a_folder_path (str): A folder path.
+        b_folder_path (str): B folder path.
+        c_folder_path (str): C folder path.
 
-    Return:
+    Returns:
         None
     """
     # Compare files between 3 folders.
