@@ -1,0 +1,88 @@
+% Created 2017-07-26 Wed 01:42
+\documentclass[11pt]{article}
+\usepackage{verbatim}
+\usepackage{luatexja-fontspec}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\setmainjfont[BoldFont=Pingfang SC]{FandolSong}
+\setsansjfont{Pingfang SC}
+\author{Nasy}
+\date{\textit{<2017-07-26 Wed>}}
+\title{README}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 25.2.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+
+\section{Incremental Update}
+\label{sec-1}
+
+\subsection{Aim}
+\label{sec-1-1}
+Compare the files in the two folders, the B folder than the A folder more files, put these files into a separate folder C. If files already in C folder, pass it.
+
+\subsection{Why this}
+\label{sec-1-2}
+A friend of mine want to do this.
+
+\subsection{Algorithm}
+\label{sec-1-3}
+I think there is no algorithm here, only the nature and operation of the collection.
+
+\subsection{Code}
+\label{sec-1-4}
+
+\begin{verbatim}
+import os
+import shutil
+
+
+def incremental_update(a_folder_path: str,
+                       b_folder_path: str,
+                       c_folder_path: str) -> None:
+    """Incremental update.
+
+    Args:
+        a_folder_path: str. A folder path.
+        b_folder_path: str. B folder path.
+        c_folder_path: str. C folder path.
+
+    Return:
+        None
+    """
+    # Compare files between 3 folders.
+    c_files = (set(os.listdir(a_folder_path)) - set(os.listdir(b_folder_path))
+               - set(os.listdir(c_folder_path)))
+
+    if not os.path.isdir(c_folder_path):
+        os.mkdir(c_folder_path)
+
+    def _copy(f_path: str) -> None:
+        """Copy file from B to C.
+
+        Args:
+            f_path: str. The file in B folder.
+        """
+        shutil.copy(
+            os.path.join(b_folder_path, f_path),
+            os.path.join(c_folder_path, f_path))
+
+    for f_path in c_files:
+        _copy(f_path)
+\end{verbatim}
+% Emacs 25.2.1 (Org mode 8.2.10)
+\end{document}
